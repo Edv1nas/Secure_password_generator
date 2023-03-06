@@ -11,7 +11,6 @@ class File(Password_printer):
     def print_to_file(self):
         f = open(self.path, "a")
         f.write(f"{self.password}\n")
-        # f.write("\n")
         f.close()
 
 class Console(Password_printer):

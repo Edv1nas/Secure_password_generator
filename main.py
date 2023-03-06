@@ -43,7 +43,6 @@ class Password_With_All_Symbols(Password_Generator):
         super().generate_password()
         self.password += ":)"
 
-
 while True:
     print("------------------------------------------------------")
     print("--> SECURE PASSWORD GENERATOR <-----------------------")
@@ -66,21 +65,23 @@ while True:
         print("\nThank you for using password generator!")
         break
 
-    try:
-        inputed_length = int(input("Enter password length: "))
-    except ValueError:
-        print("\nError: invalid input for password length.\n")
-        continue
+    while True:
+        try:
+            inputed_length = int(input("Enter password length: "))
+        except ValueError:
+            print("\nError: invalid input for password length.\n")
+            continue
 
-    try:
-        if inputed_length < 4 or inputed_length > 255:
-            raise ValueError("Undefined wrong value") 
-    except ValueError:
-        print("\nError: password lenght can't be less then 4 or more then 255 .\n")
-        continue
+        try:
+            if inputed_length < 4 or inputed_length > 255:
+                raise ValueError("Undefined wrong value") 
+        except ValueError:
+            print("\nError: password lenght can't be less then 4 or more then 255 .\n")
+            continue      
+        break
     
     password = None
-    
+        
     if choice == 1:
         password = Password_With_Only_Letters(inputed_length)
     elif choice == 2:
