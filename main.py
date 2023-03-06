@@ -54,9 +54,11 @@ while True:
     print("------------------------------------------------------")
 
     try:
-        choice = int(input("Enter your choice: "))
+        choice = int(input("Enter your a number of your choice: "))
         if choice > 4 or choice == 0:
-            raise ValueError("Invalid choice")
+            print("\nInvalid number entered.\n")
+            continue
+
     except ValueError:
         print("\nError: invalid input for menu choice.\n")
         continue
@@ -71,7 +73,7 @@ while True:
             if inputed_length < 4 or inputed_length > 255:
                 print("\nError: password lenght can't be less then 4 or more then 255 .\n")
                 continue
-            
+
         except ValueError:
             print("\nError: invalid input for password length.\n")
             continue
