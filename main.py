@@ -68,17 +68,14 @@ while True:
     while True:
         try:
             inputed_length = int(input("Enter password length: "))
+            if inputed_length < 4 or inputed_length > 255:
+                print("\nError: password lenght can't be less then 4 or more then 255 .\n")
+                continue
+            
         except ValueError:
             print("\nError: invalid input for password length.\n")
             continue
-
-        try:
-            if inputed_length < 4 or inputed_length > 255:
-                raise ValueError("Undefined wrong value") 
-        except ValueError:
-            print("\nError: password lenght can't be less then 4 or more then 255 .\n")
-            continue      
-        break
+        break   
     
     password = None
         
@@ -93,3 +90,5 @@ while True:
 
     pt.Console(f"\nGenerated password: {password.get_password()}").print_to_console()
     pt.File("password.txt",password.get_password()).print_to_file()
+
+    
