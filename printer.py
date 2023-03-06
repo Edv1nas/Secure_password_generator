@@ -10,8 +10,8 @@ class File(Password_printer):
     #function to write data to file
     def print_to_file(self):
         f = open(self.path, "a")
-        f.write(self.password)
-        f.write("\n")
+        f.write(f"{self.password}\n")
+        # f.write("\n")
         f.close()
 
 class Console(Password_printer):
