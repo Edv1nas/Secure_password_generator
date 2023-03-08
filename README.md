@@ -15,4 +15,5 @@ Console application that generates a random password based on user choice. The p
 # ASCII Art Library:
 `pipevn install art`
 
+# Console application screen:
 ![This is an image](/assets/screen1.png)
