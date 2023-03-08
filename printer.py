@@ -1,19 +1,19 @@
-class Password_printer:
+class PasswordPrinter:
     def __init__(self, password: str) -> None:
         self.password = password
 
-class File(Password_printer):
+class File(PasswordPrinter):
     def __init__(self, path: str, password: str) -> None:
         super().__init__(password)
         self.path = path
         
     #function to write data to file
     def print_to_file(self):
-        f = open(self.path, "a")
-        f.write(f"{self.password}\n")
-        f.close()
+        file = open(self.path, "a")
+        file.write(f"{self.password}\n")
+        file.close()
 
-class Console(Password_printer):
+class Console(PasswordPrinter):
     def __init__(self, password: str) -> None:
         super().__init__(password)
 

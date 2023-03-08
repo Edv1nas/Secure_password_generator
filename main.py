@@ -55,7 +55,8 @@ def get_input_choice() -> int:
                 print("\nInvalid number entered.\n")
                 continue
 
-        except ValueError:
+        except ValueError as e:
+            logging.error(f"Invalid user input: {e}")
             print("\nError: invalid input for menu choice.\n")
             continue
         return inputed_choice
@@ -65,10 +66,11 @@ def get_password_length() -> int:
         try:
             inputed_length = int(input("Enter password length: "))
             if inputed_length < 4 or inputed_length > 255:
-                print("\nError: password lenght can't be less then 4 or more then 255 .\n")
+                print("\nError: password lenght can't be less then 8 or more then 255 .\n")
                 continue
 
-        except ValueError:
+        except ValueError as e:
+            logging.error(f"Invalid user input: {e}")
             print("\nError: invalid input for password length.\n")
             continue
         return inputed_length
