@@ -14,12 +14,12 @@ class PasswordGenerator:
         self.password_length = password_length 
         self.password = "" 
 
-    def generate_password(self) -> None: 
+    def generate_password(self) -> str: 
         for length  in range(self.password_length):
             self.password += "".join(secrets.choice(self.password_symbols))
         return self.password
   
-    def get_password(self) -> None: 
+    def get_password(self) -> str: 
         return self.password
 
 class WeakPassword(PasswordGenerator):
@@ -34,7 +34,7 @@ class StrongPassword(PasswordGenerator):
     def __init__(self, length: int) -> None:
         super().__init__(string.ascii_letters + string.digits + string.punctuation, length)
 
-    def generate_password(self) -> None:
+    def generate_password(self) -> str:
         super().generate_password()
         self.password += ":)"
 
